@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>password
+    <p id="para">Implementing</p>
+    <button type="button" id="btn">click me</button>
+    <form>
+      <input type="text" name="userName" placeholder="Enter userName" />
+      <input type="password" name="password" placeholder="Enter password" />
+      <input type="submit" value="submit" id="submit" />
+    </form>
+    <script>
+      const pElement = document.getElementById("para"); // to access spcific element
+      const bElement = document.getElementById("btn"); // to access spcific element
+      const userName = document.getElementsByName("userName");
+      const password = document.getElementsByName("password")[0];
+      const submitBtn = document.getElementById("submit");
+      console.log(userName)
+
+      function func3() {
+        pElement.innerText = "In effect"; // to change the content
+      }
+      bElement.addEventListener("click", func3);
+
+      function handleSubmit(e) {
+        console.log("hello")
+        console.log(e);
+        e.preventDefault();// prevent default behaviour form tag
+      }
+
+      function getUserName(e) {
+        console.log(e.target.value);
+      }
+
+      function getPassword(e) {
+        console.log(e.target.value);
+      }
+      userName[0].addEventListener("change", getUserName);
+      password.addEventListener("change", getPassword);
+      submitBtn.addEventListener("click", handleSubmit);
+        // setTimeout(func3, 5000);
+      // console.log(pElement);
+    </script>
+  </body>
+</html>
